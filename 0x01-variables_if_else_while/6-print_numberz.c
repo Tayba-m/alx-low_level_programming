@@ -8,14 +8,12 @@
  */
 int main(void)
 {
-	char ch = 'a';
+	int digit = 0;
 
-	while (ch <= 'z')
+	while (digit <= 9)
 	{
-		if (ch == 'e' || ch == 'q')
-			ch++;
-		putchar(ch);
-		ch++;
+		putchar(digit + '0');
+		digit++;
 	}
 	putchar('\n');
 
