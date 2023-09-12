@@ -4,9 +4,10 @@
  * print_alphabet - prints 10 times the alphabet
  *
  * Return: On success 1.
- */
-
-void print_alphabet_x10(void)
+ *
+*/
+ 
+void print_alphabet(void)
 {
 	int letter;
 
