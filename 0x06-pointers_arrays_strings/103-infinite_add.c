@@ -1,11 +1,9 @@
 #include "main.h"
-
 /**
  * rev_string - reverse array
  * @n: integer params
  * Return: 0
  */
-
 void rev_string(char *n)
 {
 	int a, b = 0;
@@ -31,7 +29,6 @@ void rev_string(char *n)
  * @size_r: buffer size
  * Return: pointer to calling function
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int o_f = 0, a = 0, b = 0, digits = 0;
@@ -39,15 +36,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	while (*(n1 + a) != '\0')
 		a++;
-
 	while (*(n2 + b) != '\0')
 		b++;
 	a--;
 	b--;
-
 	if (b >= size_r || a >= size_r)
 		return (0);
-
 	while (b >= 0 || a >= 0 || o_f == 1)
 	{
 		if (a < 0)
@@ -72,7 +66,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 		if (digits == size_r)
 		return (0);
-
 		*(r + digits) = '\0';
 		rev_string(r);
 		return (r);
