@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _puts_recursion function that prints a string
+ * _puts_recursion - function that prints a string
  * @s : is argument
  * Return: Always 0
  */
