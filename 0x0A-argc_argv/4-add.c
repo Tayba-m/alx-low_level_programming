@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 				}
 				find_letter++;
 			}
-			r = _atoi(argv[i]);
+			r = atoi(argv[i]);
 			sum += r;
 		}
 		printf("%d\n", sum);
