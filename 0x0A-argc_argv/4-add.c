@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0, r = 0;
+	int i, s = 0, r = 0;
 	char ch[] = "Error", *find_letter;
 
 	if (argc > 1)
@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
 				}
 				find_letter++;
 			}
-			r = atoi(argv[i]);
-			sum += r;
+			r = _atoi(argv[i]);
+			s += r;
 		}
-		printf("%d\n", sum);
+		printf("%d\n", s);
 	}
 	else
 		printf("%d\n", 0);
