@@ -5,7 +5,6 @@
  * main - prints minimum number coins to make change for an amount of money.
  * @argc: number of arguments
  * @argv: array with the arguments
- *
  * Return: always 0
  **/
 
