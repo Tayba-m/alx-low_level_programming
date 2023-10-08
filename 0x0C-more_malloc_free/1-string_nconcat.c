@@ -10,27 +10,29 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	int a, b, l_s1, l_s2;
+	char *poi;
+	unsigned int a = 0, b = 0, len_s1 = 0, len_s2 = 0;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	for (l_s1 = 0; s1[l_s1] != '\0'; l_s1++)
-		;
-	for (l_s2 = 0; s2[l_s2] != '\0'; l_s2++)
-		;
-	ptr = malloc(l_s1 + n + 1);
-	if (ptr == NULL)
+	while (s1 && s1[len_s1])
+		len_s1++;
+	while (s2 && s2[len_s2])
+		len_s2++;
+
+	if (n < len_s2)
+		poi = malloc(sizeof(char) * (len_s1 + n + 1));
+	else
+		poi = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (!poi)
 		return (NULL);
-	for (a = 0; s1[a] != '\0'; a++)
-		ptr[a] = s1[a];
-	for (b = 0; b < n; b++)
+	while (a < len_s1)
 	{
-		ptr[a] = s2[b];
+		poi[a] = s1[a];
 		a++;
 	}
-	ptr[a] = '\0';
-	return (ptr);
+	while (n < len_s2 && a < (len_s1 + n))
+		poi[a++] = s2[b++];
+	while (n >= len_s2 && a < (len_s1 + len_s2))
+		poi[a++] = s2[b++];
+	poi[a] = '\0';
+	return (poi);
 }
