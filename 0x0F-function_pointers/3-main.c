@@ -15,7 +15,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 
 	int N1, N2;
-	char *poi;
+	char *op;
 
 	if (argc != 4)
 	{
@@ -23,19 +23,19 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 	N1 = atoi(argv[1]);
-	poi = argv[2];
-	num2 = atoi(argv[3]);
-	if (get_op_func(op) == NULL || poi[1] != '\0')
+	op = argv[2];
+	N2 = atoi(argv[3]);
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if ((*poi == '/' && N2 == 0) ||
-		(*poi == '%' && N2 == 0))
+	if ((*op == '/' && N2 == 0) ||
+		(*op == '%' && N2 == 0))
 	{
 	printf("Error\n");
 	exit(100);
 	}
-	printf("%d\n", get_op_func(poi)(N1, N2));
+	printf("%d\n", get_op_func(op)(N1, N2));
 	return (0);
 }
