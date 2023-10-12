@@ -8,7 +8,7 @@
  * @n: The number of strings passed to the function.
  * @...: A variable number of strings to be printed.
  *
- * Description: 
+ * Description:
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
