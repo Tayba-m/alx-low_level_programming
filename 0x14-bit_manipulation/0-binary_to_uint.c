@@ -25,7 +25,7 @@ unsigned long int _pow(unsigned int base, unsigned int power)
  */
 void print_binary(unsigned long int n)
 {
-	char f = 0;
+	int f = 0;
 	unsigned long int d, c;
 
 	d = _pow(2, sizeof(unsigned long int) * 8 - 1);
