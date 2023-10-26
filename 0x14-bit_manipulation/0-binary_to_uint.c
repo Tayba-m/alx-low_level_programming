@@ -1,47 +1,31 @@
+
 #include "main.h"
 
 /**
- * _pow - function
- * @base: arg
- * @power: arg
+ * binary_to_uint - function 
+ * @b: pointer
  *
- * Return: value
+ * Return: unsigned int or 0
  */
-unsigned long int _pow(unsigned int base, unsigned int power)
+unsigned int binary_to_uint(const char *b)
 {
-	unsigned int t;
-	unsigned long int n = 1;
+	unsigned int n;
+	int t;
 
-	for (t = 1; t <= power; t++)
-		n *= base;
-	return (n);
-}
-
-/**
- * print_binary - prints
- * @n: number to print
- *
- * Return: void
- */
-void print_binary(unsigned long int n)
-{
-	int f = 0;
-	unsigned long int d, c;
-
-	d = _pow(2, sizeof(unsigned long int) * 8 - 1);
-	while (d != 0)
+	n = 0;
+	if (!b)
+		return (0);
+	for (t = 0; b[t] != '\0'; t++)
 	{
-		c = n & d;
-		if (c == d)
-		{
-			f = 1;
-			_putchar('1');
-		}
-		else if (f == 1 || d == 1)
-		{
-			_putchar('0');
-		}
-		d >>= 1;
+		if (b[t] != '0' && b[t] != '1')
+			return (0);
 	}
+	for (t = 0; b[t] != '\0'; t++)
+	{
+		n <<= 1;
+		if (b[t] == '1')
+			n += 1;
+	}
+	return (n);
 }
 
